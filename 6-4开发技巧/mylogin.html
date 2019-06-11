@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            font-size: 10px;
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background-color: #e3f4f0;
+        }
+        .head_pic{
+            position: relative;
+        }
+        .head_pic>img{
+            width: 100%;
+        }
+        /*.head_pic{
+            width: 100%;
+            height: 2.5rem;
+            background: url("image/my/bg1.png") no-repeat;
+            background-size: 100%;
+        }*/
+        .right_pic img{
+            width: 2rem;
+            height: 2rem;
+        }
+        .right_pic{
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            text-align: center;
+        }
+        .pic_left{
+            margin-right: 2rem;
+        }
+        .urse img{
+            width: 6rem;
+            height: 6rem;
+        }
+        .login{
+            width: 4rem;
+            padding: 1rem 2rem;
+            border: 0.1rem white solid;
+        }
+        .login a{
+            color: white;
+            display: block;
+            font-size: 1.2rem;
+        }
+        .urse{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%,-50% );
+        }
+        .urse img{
+            margin-bottom: 1rem;
+        }
+        .center{
+            background-color: white;
+            margin-top: 1rem;
+        }
+        .lis{
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .lis li{
+            padding: 1rem 0;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        .lis li img:first-of-type{
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+        }
+        .lis li img:last-of-type{
+            widthss: 0.8rem;
+            height: 1.6rem;
+            float: right;
+        }
+        .lis li a{
+            color: black;
+            font-size: 1.2rem;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="head_pic">
+        <img src="image/my/bg1.png" alt="">
+        <div class="right_pic">
+            <div class="pic_left">
+                <img src="image/my/urse.png" alt="">
+                <p>我的</p>
+            </div>
+            <div class="pic_right">
+            <img src="image/my/down.png" alt="">
+            <p>APP</p>
+            </div>
+        </div>
+        <div class="urse">
+            <img src="image/my/urse2.png" alt="">
+            <div class="login">
+                <a href="#">
+                    登录
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <ul class="lis">
+            <li><a href="#"><img src="image/my/icon1.png" alt=""><span>我关注的房源</span><img src="image/my/right.png" alt=""></a></li>
+            <li><a href="#"><img src="image/my/icon2.png" alt=""><span>我关注的小区</span><img src="image/my/right.png" alt=""></a></li>
+            <li><a href="#"><img src="image/my/icon3.png" alt=""><span>我关注的新房</span><img src="image/my/right.png" alt=""></a></li>
+            <li><a href="#"><img src="image/my/icon4.png" alt=""><span>我的看房记录</span><img src="image/my/right.png" alt=""></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        window.onresize = function () {
+            w_ui = 320;
+            w_w = document.documentElement.clientWidth || document.body.clientWidth;
+            var html = document.querySelector('html');
+            html.style.fontSize = (w_w / 320) * 10 + 'px';
+        }
+    }
+</script>
+</html>

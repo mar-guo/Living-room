@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            font-size: 10px;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            background-color: #deeeea;
+            position: relative;
+        }
+        .box_head{
+            width: 100%;
+            background-color:#ff8a00;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .box_head span{
+            flex: 4;
+        }
+        .box_head a{
+            flex: 1;
+        }
+        .box_head>span>img{
+            width:11rem;
+            height: 4rem;
+            margin-left: 1.5rem;
+        }
+        .box_head>a img{
+            width:2.5rem;
+            height: 3rem;
+        }
+        .inputs{
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            background-color: white;
+            margin-bottom: 1rem;
+        }
+        .inputs input{
+            width: 25rem;
+            height: 3rem;
+            border: 0.1rem #ccc solid;
+            border-right:rgba(0,0,0,0);
+            -webkit-appearance: none;
+            outline: none;
+            line-height: 3rem;
+            font-size: 1.3rem;
+        }
+        .inputs>a{
+            width: 5.5rem;
+            height: 3rem;
+            border: 0.1rem #ccc solid;
+            border-left:rgba(0,0,0,0);
+        }
+        .inputs>a{
+            display: flex;
+            align-items: center;
+        }
+        .inputs>a>img{
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-left: 1.5rem;
+        }
+        .center-title{
+            width: 100%;
+            height: 4rem;
+            border-top: 0.1rem solid #ccc;
+            border-bottom: 0.1rem solid #ccc;
+            background-color: white;
+        }
+        .titles li{
+            width: 25%;
+            float: left;
+            line-height:4rem;
+        }
+
+        .titles{
+            color: #666666;
+        }
+        .titles>li>span{
+            width: 100%;
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+        }
+        .centers{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .centers li{
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .centers a{
+            display: flex;
+        }
+        .centers img{
+            width: 8rem;
+            height: 8rem;
+            flex: 1;
+        }
+        .text{
+            flex: 2;
+            margin-left: 1rem;
+            color: black;
+            line-height: 2rem;
+        }
+        .text h4{
+            font-size: 1.3rem;
+        }
+        .text .txt1{
+            font-size: 1.2rem;
+        }
+        .text .txt2{
+            font-size: 1rem;
+            color: #959595;
+        }
+        .txt2 span{
+            color:#ff8a00;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+       .centers hr{
+           border:0.04rem #ff8a00 solid;
+        }
+        .box_bottom{
+            width: 100%;
+            color: #919191;
+            background-color:#2f3130;
+        }
+        .box_bottom hr{
+            border:0.03rem #4d4d4d solid;
+            margin-bottom: 1rem;
+        }
+        .bottom_head{
+            height: 3rem;
+            line-height:3rem;
+            font-size: 1.4rem;
+        }
+        .txt_weiZhi{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .iphone_pic{
+            width: 2rem;
+            height: 2.5rem;
+            background: url("image/index/apple.png") no-repeat;
+            background-size: cover;
+            margin-right: 1rem;
+        }
+        .Android_pic{
+            width: 2rem;
+            height: 2.5rem;
+            background: url("image/index/android.png") no-repeat;
+            background-size: cover;
+            margin-right: 1rem;
+        }
+        .bottom_center{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        .left{
+            flex: 2;
+            display: flex;
+        }
+        .right{
+            flex: 1;
+            display: flex;
+        }
+        .bottom_bottom{
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+        }
+        .bottom_bottom p:first-child{
+            font-size: 1.2rem;
+        }
+        .bottom_bottom p:last-child{
+            font-size: 0.8rem;
+        }
+        .titles>li>span span:nth-of-type(2){
+            display: none;
+        }
+        .active {
+            color: #ff8a00;
+        }
+        .active2{
+            color: #ff8a00;
+            background-color: white;
+        }
+        .qx{
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 13.5rem;
+            left: 0;
+            z-index: 99;
+        }
+        .hidden{
+            display: flex;
+        }
+        .qyDt{
+            width: 40%;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background-color: #eeeeee;
+        }
+        .qyDt li{
+            padding:1rem 0 ;
+            text-align: center;
+        }
+        .quYu{
+            font-size: 1.5rem;
+            overflow: hidden;
+            background: white;
+        }
+        .quYu li{
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding:1rem 0 ;
+        }
+        .jg{
+            width: 100%;
+            background-color: white;
+            display: none;
+            position: absolute;
+            top: 13.5rem;
+            left: 0;
+            z-index: 99;
+        }
+        .lis_jg{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .lis_jg li{
+            padding: 1rem 0;
+            font-size: 1.3rem;
+            color: #666666;
+            border-bottom: 0.1rem #dbdbdb solid;
+        }
+        .fx{
+            width: 100%;
+            background-color: white;
+            display: none;
+            position: absolute;
+            top: 13.5rem;
+            left: 0;
+            z-index: 99;
+        }
+        .lis_fx{
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .lis_fx li{
+            padding: 1rem 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-bottom: 0.1rem #dbdbdb solid;
+        }
+        .lis_fx li input{
+        }
+        .lis_fx li a{
+            color: white;
+            display: block;
+            text-align: center;
+        }
+        .lis_fx li:last-of-type{
+            background-color: #ff8a00;
+        }
+        .lis_fx li span:nth-of-type(2){
+            border: #b3b3b3 solid 0.1rem;
+            float: right;
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+        .lis_fx li img{
+            margin-right: 1rem;
+            display: none;
+        }
+        .gd{
+            width: 100%;
+            background-color: white;
+            display: none;
+            position: absolute;
+            top: 13.5rem;
+            left: 0;
+            z-index: 99;
+        }
+        .gd div{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        .head_qx{
+           padding-top:2rem ;
+           padding-bottom: 1rem;
+        }
+        .gd .gd_quXu{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1rem;
+            overflow: hidden;
+            border-bottom: 0.1rem #bababa solid;
+            padding-bottom: 1rem;
+        }
+        .gd_quXu a{
+            color: black;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border: 0.1rem #c2c2c2 solid;
+            text-align: center;
+            margin-left: 0.4rem;
+        }
+        .gd_quXu li{
+            float: left;
+            width: 25%;
+            margin-bottom: 1rem;
+        }
+        .but_bottom{
+            width: 80%;
+            margin: 0 auto;
+            background-color: #ff8a00;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        .but_bottom a{
+            display: block;
+            color: white;
+            font-size: 1.3rem;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 88;
+        }
+        .active3{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box_head">
+        <span><img src="image/index/logo.jpg" alt=""></span>
+        <a href="#"><span><img src="image/index/my.jpg" alt=""></span></a>
+        <a href="#"><span><img src="image/index/xiazai.jpg" alt=""></span></a>
+    </div>
+    <div class="inputs">
+        <input type="text" placeholder="请输入小区或商圈名称"><a href="#"><span>|</span><img src="image/index/seach.jpg" alt=""></a>
+    </div>
+    <div class="center-title">
+        <ul class="titles">
+            <li><span>区域 <span class="s1">▼</span> <span class="s2">▲</span></span></li>
+            <li><span>价格 <span class="s1">▼</span> <span class="s2">▲</span></span></li>
+            <li><span>房型 <span class="s1">▼</span> <span class="s2">▲</span></span></li>
+            <li><span>更多 <span class="s1">▼</span> <span class="s2">▲</span></span></li>
+        </ul>
+    </div>
+    <div class="qx">
+        <div class="hidden">
+            <ul class="qyDt">
+                <li class="active2">区域</li>
+                <li>地铁</li>
+            </ul>
+            <ul class="quYu">
+                <li>附近</li>
+                <li>不限</li>
+                <li>不限</li>
+                <li>安贞</li>
+                <li>朝阳</li>
+                <li>奥林匹克公园</li>
+                <li>海淀</li>
+                <li>百子湾</li>
+                <li>昌平</li>
+                <li>北工大</li>
+                <li>丰台</li>
+                <li>北苑</li>
+                <li>石景山</li>
+                <li>CBD</li>
+            </ul>
+        </div>
+    </div>
+    <div class="jg">
+        <ul class="lis_jg">
+            <li>不限</li>
+            <li>100万以下</li>
+            <li>100万-150万</li>
+            <li>150万-200万</li>
+            <li>200万-250万</li>
+            <li>250万-300万</li>
+            <li>自定义价格</li>
+        </ul>
+    </div>
+    <div class="fx">
+        <ul class="lis_fx">
+            <li>不限</li>
+            <li><span>1室</span> <span class="cheack"><img src="image/SecondHandList/ok.png" alt=""></span></li>
+            <li><span>2室</span> <span class="cheack"><img src="image/SecondHandList/ok.png" alt=""></span></li>
+            <li><span>3室</span> <span class="cheack"><img src="image/SecondHandList/ok.png" alt=""></span></li>
+            <li><span>4室</span> <span class="cheack"><img src="image/SecondHandList/ok.png" alt=""></span></li>
+            <li><span>5室</span> <span class="cheack"><img src="image/SecondHandList/ok.png" alt=""></span></li>
+            <li>
+                <a href="">
+                    <span>确定</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="gd">
+        <div class="head_qx">
+            区域
+        </div>
+        <ul class="gd_quXu">
+            <li><a href="">南</a></li>
+            <li><a href="">南北</a></li>
+            <li><a href="">东</a></li>
+            <li><a href="">西</a></li>
+            <li><a href="">北</a></li>
+        </ul>
+        <div class="head_qx">
+            面积(平方)
+        </div>
+        <ul class="gd_quXu">
+            <li><a href="">50以下</a></li>
+            <li><a href="">50-70</a></li>
+            <li><a href="">70-90</a></li>
+            <li><a href="">90-110</a></li>
+            <li><a href="">110-130</a></li>
+            <li><a href="">130-150</a></li>
+            <li><a href="">150-200</a></li>
+            <li><a href="">200以上</a></li>
+        </ul>
+        <div class="head_qx">
+           标签
+        </div>
+        <ul class="gd_quXu">
+            <li><a href="">学区房</a></li>
+            <li><a href="">地铁房</a></li>
+            <li><a href="">不限购</a></li>
+            <li><a href="">满两年</a></li>
+            <li><a href="">满五唯一</a></li>
+            <li><a href="">降价</a></li>
+            <li><a href="">新上</a></li>
+            <li><a href="">独家</a></li>
+            <li><a href="">有钥匙</a></li>
+        </ul>
+        <div class="head_qx">
+            楼层
+        </div>
+        <ul class="gd_quXu">
+            <li><a href="">5年以内</a></li>
+            <li><a href="">10年以内</a></li>
+            <li><a href="">10-20年</a></li>
+            <li><a href="">20年以上</a></li>
+        </ul>
+        <div class="head_qx">
+            楼龄
+        </div>
+        <ul class="gd_quXu">
+            <li><a href="">低楼层</a></li>
+            <li><a href="">中楼层</a></li>
+            <li><a href="">高楼层</a></li>
+            <li><a href="">清空条件</a></li>
+        </ul>
+        <div class="but_bottom">
+            <a href="">
+                确定
+            </a>
+        </div>
+    </div>
+    <div class="box_center">
+        <ul class="centers">
+            <li>
+                <a href="">
+                <img src="image/index/img1.jpg" alt="">
+                <div class="text">
+                    <h4>西便门外大街2室1厅89平</h4>
+                    <span class="txt1">
+                        南北 高楼层/6层
+                    </span><br>
+                    <span class="txt2">
+                        签约价格:13244元/平
+                        <span>905万</span><br>
+                        签约日期:2015年11月10日
+                    </span>
+                </div>
+                </a>
+            </li>
+            <hr>
+            <li>
+                <a href="">
+                    <img src="image/index/img2.png" alt="">
+                    <div class="text">
+                        <h4>西便门外大街2室1厅89平</h4>
+                        <span class="txt1">
+                            南北 高楼层/6层
+                        </span><br>
+                        <span class="txt2">
+                        签约价格:13244元/平
+                        <span>905万</span><br>
+                        签约日期:2015年11月10日
+                    </span>
+                    </div>
+                </a>
+            </li>
+            <hr>
+            <li>
+                <a href="">
+                    <img src="image/index/img3.png" alt="">
+                    <div class="text">
+                        <h4>花涧溪二期 2室2厅 90平</h4>
+                        <span class="txt1">
+                       南北 高楼层/6层
+                    </span><br>
+                        <span class="txt2">
+                        签约价格:13244元/平
+                        <span>1322万</span><br>
+                        签约日期:2015年11月10日
+                    </span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="box_bottom">
+        <div class="txt_weiZhi">
+            <div class="bottom_head">
+                北京找房无忧 > 首页
+            </div>
+            <hr>
+            <div class="bottom_center">
+                <div class="left">
+                    <div class="iphone_pic"></div>
+                    <span>iPhone<br>客户端</span>
+                </div>
+                <div class="right">
+                    <div class="Android_pic"></div>
+                    <span>Android<br>客户端</span>
+                </div>
+            </div>
+            <div class="bottom_bottom">
+                <p>北京找房无忧房地产经纪公司</p>
+                <p>网络经营许可证京ICP备20160812</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script>
+    window.onload = function () {
+        window.onresize = function () {
+            w_ui = 320;
+            w_w = document.documentElement.clientWidth || document.body.clientWidth;
+            var html = document.querySelector('html');
+            html.style.fontSize = (w_w / 320) * 10 + 'px';
+        }
+        }
+</script>
+<script src="js/zepto.js"></script>
+<script src="js/zepto_touch.js"></script>
+<script>
+    $('.titles>li').on('click',function () {
+           $(this).toggleClass('active').siblings('li').removeClass('active');
+           $('.box').addClass('mask');
+           $(this).children('span').children('.s1').toggle();
+           $(this).children('span').children('.s2').toggle();
+           var index = $(this).index();
+           if (index ===0){
+               $('.qx').toggle();
+               $('.jg').hide();
+               $('.fx').hide();
+               $('.gd').hide();
+           }else if(index ===1){
+               $('.jg').toggle();
+               $('.qx').hide();
+               $('.fx').hide();
+               $('.gd').hide();
+           }else if(index ===2){
+               $('.fx').toggle();
+               $('.jg').hide();
+               $('.qx').hide();
+               $('.gd').hide();
+           }else if(index ===3){
+               $('.gd').toggle();
+               $('.fx').hide();
+               $('.jg').hide();
+               $('.qx').hide();
+           }
+        if ( $('.qx').css('display') === 'none' &&
+            $('.jg').css('display') === 'none' &&
+            $('.fx').css('display') === 'none' &&
+            $('.gd').css('display') === 'none'
+        ){
+            $('.box').removeClass('mask');
+        }else {
+            $('.box').addClass('mask');
+        }
+    });
+    $('.quYu li').on('click',function () {
+        $(this).addClass('active').siblings('li').removeClass('active');
+    });
+    $('.qyDt li').on('click',function () {
+        $(this).addClass('active2').siblings('li').removeClass('active2');
+    });
+    $('.lis_fx .cheack').on('click',function () {
+        $(this).children('img').toggle();
+    })
+    
+</script>
+</html>

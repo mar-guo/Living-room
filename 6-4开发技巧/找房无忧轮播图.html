@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/swiper-4.1.6.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            font-size: 10px;
+            width: 100%;
+            height: 100%;
+        }
+        a{
+            text-decoration: none;
+            border: none;
+            outline: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 100%;
+            background-color: #e3f4f0;
+        }
+        .box_head{
+            width: 100%;
+            background-color:#ff8a00;
+            display: flex;
+            align-items: center;
+        }
+        .box_head span{
+            flex: 4;
+        }
+        .box_head a{
+            flex: 1;
+        }
+        .box_head>span>img{
+            width:11rem;
+            height: 4rem;
+            margin-left: 1.5rem;
+        }
+        .box_head>a img{
+            width:2.5rem;
+            height: 3rem;
+        }
+        .swiper-slide img{
+            width: 100%;
+        }
+        .swiper-wrapper{
+            position: relative;
+        }
+        .swiper-pagination{
+            text-align: right;
+            transform: translateX(-2rem);
+            color: white;
+        }
+        .container-txt{
+            width: 100%;
+            background-color: white;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+        .container-txt .txt_center{
+            width: 80%;
+            font-size: 1.1rem;
+            margin:0 auto;
+            line-height: 2.2rem;
+        }
+        .container-txt p:nth-of-type(1) span{
+            color: #ff8a00;
+        }
+        .container-txt p:nth-of-type(1) img{
+            width: 1.3rem;
+            height: 2rem;
+            float: right;
+        }
+        .container-txt p:nth-of-type(2){
+            color: #a4a4a4;
+        }
+        .hove_tit{
+            color: #8e8e8e;
+        }
+        .hove_tit span{
+            padding: 0.4rem 0.8rem;
+            background-color: #f3f3f3;
+        }
+        .ul_head li{
+            float: left;
+            width: 50%;
+            font-size: 1.3rem;
+            border-bottom: #d2d2d2 0.1rem solid;
+            padding:1rem 0;
+        }
+        .xinXi,.fyTs{
+            margin-top: 1.5rem;
+            background-color: white;
+        }
+        .xinXi .ul_head,.ul_bottom{
+            width: 80%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .ul_bottom li{
+            font-size: 1.3rem;
+            border-bottom: #d2d2d2 0.1rem solid;
+            padding:1rem 0;
+        }
+        .gdXi{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            padding:1rem 0;
+        }
+        .gdXi a{
+            display: block;
+            color: #aaaaaa;
+            text-align: center;
+        }
+        .fyTs div{
+            width: 80%;
+            margin: 0 auto;
+            padding:1rem 0;
+        }
+        .fyTs_head{
+            font-size: 1.5rem;
+            color: #ff8a00;
+            font-weight: bold;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        .fyTs_center{
+            font-size: 1.2rem;
+            line-height: 2rem;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        .hxFj{
+            width: 100%;
+            margin-top: 1.5rem;
+            background-color: white;
+        }
+        .hxFj_ul{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .hxFj_ul li{
+            overflow: hidden;
+            padding:1rem 0;
+        }
+        .hxFj_ul li:first-of-type{
+            font-size: 1.5rem;
+            color: #ff8a00;
+            font-weight: bold;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        .hxFj_ul li:nth-of-type(2){
+            border-bottom: #ff8a00 0.1rem solid;
+        }
+        .hxFj_left{
+            float: left;
+            margin-right: 1rem;
+        }
+        .hxFj_left img{
+            width: 8rem;
+            height: 8rem;
+        }
+        .hxFj_right{
+            color: black;
+            line-height: 3rem;
+        }
+        .hxFj_right p:nth-of-type(1){
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        .hxFj_right p:nth-of-type(2){
+            font-size: 1rem;
+        }
+        .dkSchool,.diTu{
+            width: 100%;
+            margin-top: 1.5rem;
+            background-color: white;
+        }
+        .schoolXx {
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        .schoolXx li{
+            border-bottom: #d2d2d2 0.1rem solid;
+            padding:1rem 0;
+        }
+        .schoolXx span{
+            color: #a4a4a4;
+        }
+        .schoolXx li:last-of-type{
+            border-bottom: #d2d2d2 0 solid;
+        }
+        .diTu div{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .diTu_head{
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding:1rem 0;
+            margin-bottom: 1.5rem;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        #diTu_center{
+            width: 80%;
+            margin: 0 auto;
+            height:15rem;
+        }
+        .tjFy{
+            width: 100%;
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            background-color: white;
+        }
+        .tjFy_lis{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .tjFy_lis li:first-of-type{
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding:1rem 0;
+        }
+        .tjFy_lis li{
+            padding:1rem 0;
+            border-bottom: #d2d2d2 0.1rem solid;
+        }
+        .tjFy_lis img{
+            width: 8rem;
+            height: 8rem;
+            flex: 1;
+        }
+        .text{
+            flex: 1;
+            margin-left: 1.5rem;
+            color: black;
+            line-height: 2.4rem;
+            width: 16rem;
+        }
+        .text h2{
+            overflow:hidden; /*超出的文本隐藏*/
+            text-overflow:ellipsis; /*//溢出用省略号显示*/
+            white-space:nowrap; /*//溢出不换行*/
+        }
+        .tjFy_lis a{
+            display: flex;
+        }
+        .txt1{
+            font-size: 1.2rem;
+        }
+        .txt2{
+            font-size: 1rem;
+            color: #b4b4b4;
+        }
+        .text span:nth-child(3){
+            color: #ff8a00;
+            float: right;
+        }
+        .txt2 span:nth-child(2){
+            float: right;
+        }
+        .tjLy{
+            background-color: #d8d8d8;
+            padding:0.6rem;
+        }
+        .box_bottom{
+            width: 100%;
+            color: #919191;
+            background-color:#2f3130;
+        }
+        .box_bottom hr{
+            border:0.03rem #4d4d4d solid;
+            margin-bottom: 1rem;
+        }
+        .bottom_head{
+            height: 3rem;
+            line-height:3rem;
+            font-size: 1.4rem;
+        }
+        .txt_weiZhi{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .iphone_pic{
+            width: 2rem;
+            height: 2.5rem;
+            background: url("image/index/apple.png") no-repeat;
+            background-size: cover;
+            margin-right: 1rem;
+        }
+        .Android_pic{
+            width: 2rem;
+            height: 2.5rem;
+            background: url("image/index/android.png") no-repeat;
+            background-size: cover;
+            margin-right: 1rem;
+        }
+        .bottom_center{
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 1.2rem;
+        }
+        .left{
+            flex: 2;
+            display: flex;
+        }
+        .right{
+            flex: 1;
+            display: flex;
+        }
+        .bottom_bottom{
+            text-align: center;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .bottom_bottom p:first-child{
+            font-size: 1.2rem;
+        }
+        .bottom_bottom p:last-child{
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box_head">
+        <span><img src="image/index/logo.jpg" alt=""></span>
+        <a href=""><span><img src="image/index/my.jpg" alt=""></span></a>
+        <a href=""><span><img src="image/index/xiazai.jpg" alt=""></span></a>
+    </div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="image/SecondHandList/img.png" alt=""></div>
+            <div class="swiper-slide"><img src="image/SecondHandList/img.png" alt=""></div>
+            <div class="swiper-slide"><img src="image/SecondHandList/img.png" alt=""></div>
+            <div class="swiper-slide"><img src="image/SecondHandList/img.png" alt=""></div>
+            <div class="swiper-slide"><img src="image/SecondHandList/img.png" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="container-txt">
+        <div class="txt_center">
+        <h2>天鹅湾小区精装两居，满五唯一，业主换房急售</h2>
+        <p><span>576 </span>万元  (单价：46327元/平) <img src="image/SecondHandList/phone.png" alt=""></p>
+        <p>挂牌时间2015年6月20日</p>
+        <p class="hove_tit">
+            <span>学区房</span>
+            <span>独家</span>
+            <span>满五唯一</span>
+        </p>
+        </div>
+    </div>
+    <div class="xinXi">
+        <ul class="ul_head">
+            <li>户型：3室2厅</li>
+            <li>面积：100平</li>
+            <li>楼层：中楼层</li>
+            <li>朝向：西南</li>
+            <li>装修：精装</li>
+            <li>楼型：塔楼</li>
+            <li>年代：2004年</li>
+            <li>区域：西二旗</li>
+            <li>首付：123万</li>
+            <li>月供：15683元</li>
+        </ul>
+        <ul class="ul_bottom">
+            <li>地铁：离西二旗地铁站800米</li>
+            <li>小区：珠江帝景</li>
+            <li>学校：北京市第二实验小学</li>
+        </ul>
+        <div class="gdXi">
+            <a href="#">
+                更多房源信息
+            </a>
+        </div>
+    </div>
+    <div class="fyTs">
+        <div class="fyTs_head">房源特色</div>
+        <div class="fyTs_center">
+            小区环境优雅，虽处闹市中（小区南200米有美廉美超市、西30米有华联商场、星美国际影城、东北角就是大中电器、
+            小区东100米有汇佳幼儿园、昌平实验一小，昆泰国际大酒...
+        </div>
+        <div class="gdXi">
+            <a href="#">
+                更多特色
+            </a>
+        </div>
+    </div>
+    <div class="hxFj">
+        <ul class="hxFj_ul">
+            <li>
+                户型分间
+            </li>
+            <li>
+                <a href="#">
+                    <div class="hxFj_left"><img src="image/SecondHandList/img4.png" alt=""></div>
+                    <div class="hxFj_right">
+                        <p>当前格局</p>
+                        <p>分间信息：客厅25平米，南北通透</p>
+                        <p class="hove_tit">
+                            <span>南北通透</span>
+                            <span>全明格局</span>
+                        </p>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="hxFj_left"><img src="image/SecondHandList/img5.png" alt=""></div>
+                    <div class="hxFj_right">
+                        <p>当前格局</p>
+                        <p>分间信息：客厅25平米，南北通透</p>
+                        <p class="hove_tit">
+                            <span>南北通透</span>
+                            <span>全明格局</span>
+                        </p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="dkSchool">
+        <ul class="schoolXx">
+            <li>对口学校</li>
+            <li><span>学校名称：</span>北京市第二实验小学</li>
+            <li><span>升学方式：</span>直升、派位</li>
+            <li><span>对口中学：</span>团结湖中学</li>
+            <li><span>划片小区：</span>3个划片小区 在售房源150套</li>
+            <li><span>学校特色：</span>包食宿、有校车</li>
+            <li>
+                <div class="gdXi">
+                    <a href="#">
+                        查看学校详情
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="diTu">
+        <div class="diTu_head">位置及周边</div>
+        <div id="diTu_center"></div>
+    </div>
+    <div class="tjFy">
+        <ul class="tjFy_lis">
+            <li>
+                推荐房源
+            </li>
+            <li>
+            <a href="">
+                <img src="image/SecondHandList/img6.png" alt="">
+                <div class="text">
+                    <h2>光大水墨  精装复式 稀缺</h2>
+                    <span class="txt1">
+                           室1厅96㎡南北
+                        </span>
+                    <span>
+                              280万
+                        </span>
+                    <br>
+                    <span class="txt2">
+                            <span>光大水墨</span>
+                            <span>14268元/平</span>
+                            <br>
+                            <span>
+                                学区房
+                            </span>
+                    </span>
+                </div>
+            </a>
+                <div class="tjLy">
+                    推荐理由：同户型、通风好、采光好
+                </div>
+        </li>
+            <li>
+                <a href="">
+                    <img src="image/SecondHandList/img6.png" alt="">
+                    <div class="text">
+                        <h2>光大水墨  精装复式 稀缺</h2>
+                        <span class="txt1">
+                           室1厅96㎡南北
+                        </span>
+                        <span>
+                              280万
+                        </span>
+                        <br>
+                        <span class="txt2">
+                            <span>光大水墨</span>
+                            <span>14268元/平</span>
+                            <br>
+                            <span>
+                                学区房
+                            </span>
+                    </span>
+                    </div>
+                </a>
+                <div class="tjLy">
+                    推荐理由：同户型、通风好、采光好
+                </div>
+            </li>
+        </ul>
+        <div class="gdXi">
+            <a href="#">
+                查看更多相似房源
+            </a>
+        </div>
+    </div>
+    <div class="box_bottom">
+        <div class="txt_weiZhi">
+            <div class="bottom_head">
+                北京找房无忧 > 首页
+            </div>
+            <hr>
+            <div class="bottom_center">
+                <div class="left">
+                    <div class="iphone_pic"></div>
+                    <span>iPhone<br>客户端</span>
+                </div>
+                <div class="right">
+                    <div class="Android_pic"></div>
+                    <span>Android<br>客户端</span>
+                </div>
+            </div>
+            <div class="bottom_bottom">
+                <p>北京找房无忧房地产经纪公司</p>
+                <p>网络经营许可证京ICP备20160812</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=k3FGHLiyRneuSXEeRnuzGBopVMmQjmBK"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+            type:'fraction'
+        },
+        autoplay : true
+    });
+</script>
+<script>
+    var map = new BMap.Map("diTu_center");
+    var point = new BMap.Point(116.331398,39.897445);
+    map.centerAndZoom(point,12);
+    function myFun(result){
+        console.log(result);
+        var cityName = result.name;
+        alert("当前定位城市:"+cityName);
+        map.setCenter(cityName);
+        var points = result.center;
+        var marker = new BMap.Marker(points);        // 创建标注
+        map.addOverlay(marker);
+    }
+    var myCity = new BMap.LocalCity();
+    myCity.get(myFun);
+</script>
+<script>
+    window.onload = function () {
+        window.onresize = function () {
+            w_ui = 320;
+            w_w = document.documentElement.clientWidth || document.body.clientWidth;
+            var html = document.querySelector('html');
+            html.style.fontSize = (w_w / 320) * 10 + 'px';
+        }
+    }
+</script>
+</html>
